@@ -4,7 +4,7 @@ This is a simple WebProject with Gradle and Selenium that simulates a user calcu
 
 ## How to run the test 
 
-`./gradlew test`
+`./gradlew clean test`
 
 In the code you will need to configure the webdriver. You can download it from: https://sites.google.com/a/chromium.org/chromedriver/downloads
 
