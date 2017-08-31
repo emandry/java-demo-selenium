@@ -10,9 +10,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriver.Options;
 import org.openqa.selenium.WebDriver.Timeouts;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-public class SeleniumTest
+
+public class SeleniumFirefoxTest
 {
   private static WebDriver wd;
   
@@ -20,13 +24,13 @@ public class SeleniumTest
   public void setUp()
     throws Exception
   {
-    System.setProperty("webdriver.chrome.driver", "/Users/username/Desktop/selenium/chromedriver");
-    wd = new ChromeDriver();
+    System.setProperty("webdriver.gecko.driver", "/Users/username/Desktop/selenium/geckodriver");
+    wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
   }
   
   @Test
-  public void SeleniumTest()
+  public void SeleniumFirefoxTest()
   {
     wd.get("http://localhost:8080/");
     wd.findElement(By.linkText("Enter Data")).click();
